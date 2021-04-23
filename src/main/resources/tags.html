@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签页面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!--引入semanticUI-->
+    <link rel="stylesheet" type="text/css" href="./static/css/myUse.css">
+
+</head>
+<body>
+
+<!--导航部分-->
+<nav class="ui inverted attached segment">
+    <div class="ui container">
+        <!--导航栏-->
+        <!--stackable是为了适配移动端-->
+        <div class="ui inverted menu secondary stackable">
+            <h2 class="ui teal header item">YwrbyBlog</h2>
+
+            <a href="#" class="item m-mobile-hide m-item"><i class="home icon"></i> Home</a> <!--首页-->
+            <a href="#" class="item m-mobile-hide m-item"><i class="idea icon"></i> Archives</a> <!--时间线 归档-->
+            <a href="#" class="item m-mobile-hide m-item"><i class="tags icon"></i> Tags</a> <!--标签云-->
+            <a href="#" class="item m-mobile-hide m-item"><i class="github icon"></i> Github</a>
+            <a href="#" class="item m-mobile-hide m-item"><i class="info icon"></i> About</a> <!--关于我-->
+
+            <div class="right item m-mobile-hide m-item">
+                <div class="ui icon input transparent inverted">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon link"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="menu toggle ui black button icon m-right-top m-mobile-show">
+        <i class="icon sidebar"></i>
+    </a>
+</nav>
+
+<!--正文部分-->
+<div class="m-padded-tb-large">
+    <!--container是SemanticUI中的响应式容器，会根据屏幕大小进行适配-->
+    <div class="ui container">
+        <div class="ui grid stackable">
+            <div class="eleven wide column">
+                <!--博客列表头部-->
+                <div class="ui segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <h3 class="ui teal header">标签</h3>
+                        </div>
+                        <div class="column right aligned">
+                            共 <h2 class="ui orange header m-inline-block">14</h2> 个
+                        </div>
+                    </div>
+                </div>
+                <!--博客列表项-->
+                <div class="ui attached segment">
+                    <div class="vertical fluid menu ui">
+                        <div class="item">
+                            SpringCloud <div class="ui label">13</div>
+                        </div>
+                        <div class="item">
+                            JavaWeb <div class="ui label">12</div>
+                        </div>
+                        <div class="item">
+                            SpringCloud <div class="ui label">13</div>
+                        </div>
+                        <div class="item">
+                            JavaWeb <div class="ui label">12</div>
+                        </div>
+                        <div class="item">
+                            SpringCloud <div class="ui label">13</div>
+                        </div>
+                        <div class="item">
+                            JavaWeb <div class="ui label">12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--博客侧边栏-->
+            <div class="five wide column">
+
+                <!--个人信息栏-->
+                <div class="ui segments">
+                    <div class="vertical fluid menu ui ">
+                        <!--头像栏-->
+                        <div class="item">
+                            <img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/ywrby.png" class="ui image tiny circular centered">
+                        </div>
+                        <!--个人信息栏-->
+                        <div class="item ">
+                            <div class="ui container center aligned">
+                                <h3 class="ui centered header">Ywrby</h3>
+                                <p class="m-opacity-mini m-text-spaced">Students majoring in CS at SWU</p>
+                            </div>
+                        </div>
+                        <!--社交图标栏-->
+                        <div class="item">
+                            <div class="ui container center aligned">
+                                <button class="ui teal  button fluid">
+                                    <i class="github icon"></i>
+                                    Follow Me
+                                </button>
+                            </div>
+                            <div class="ui container center aligned m-padded-t1-tiny">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <div class="ui container center aligned ">
+                                            <button class="ui circular facebook icon button">
+                                                <i class="facebook icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="four wide column">
+                                        <div class="ui container center aligned ">
+                                            <button class="ui circular twitter icon button">
+                                                <i class="twitter icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="four wide column">
+                                        <div class="ui container center aligned ">
+                                            <button class="ui circular linkedin icon button">
+                                                <i class="wechat icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="four wide column">
+                                        <div class="ui container center aligned ">
+                                            <button class="ui circular youtube icon button">
+                                                <i class="youtube icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--通知栏-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid center">
+                            <div class="column left aligned">
+                                <i class="pencil alternate icon"></i>Announcement
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment m-text-thin m-text-spaced m-opacity-mini">
+                        Less is more
+                    </div>
+                </div>
+
+                <!--标签栏-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid center">
+                            <div class="column left aligned">
+                                <i class="tags icon"></i>标签
+                            </div>
+                            <div class="column right aligned">
+                                <a href="#" target="_blank">more <i class="angle double right icon"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <div class="vertical fluid menu ui">
+                            <div class="item">
+                                SpringCloud <div class="ui label">13</div>
+                            </div>
+                            <div class="item">
+                                JavaWeb <div class="ui label">12</div>
+                            </div>
+                            <div class="item">
+                                SpringCloud <div class="ui label">13</div>
+                            </div>
+                            <div class="item">
+                                JavaWeb <div class="ui label">12</div>
+                            </div>
+                            <div class="item">
+                                SpringCloud <div class="ui label">13</div>
+                            </div>
+                            <div class="item">
+                                JavaWeb <div class="ui label">12</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--最近文章-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid center">
+                            <div class="column left aligned">
+                                <i class="archive icon"></i>最近文章
+                            </div>
+                            <div class="column right aligned">
+                                <a href="#" target="_blank">more <i class="angle double right icon"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <div class="vertical fluid menu ui">
+                            <div class="item">
+                                <div>4-基于SpringBoot的Web开发</div>
+                                <div class="ui link list">
+                                    <p class="item">2020-10-1</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>4-基于SpringBoot的Web开发</div>
+                                <div class="ui link list">
+                                    <p class="item">2020-10-1</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>4-基于SpringBoot的Web开发</div>
+                                <div class="ui link list">
+                                    <p class="item">2020-10-1</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>4-基于SpringBoot的Web开发</div>
+                                <div class="ui link list">
+                                    <p class="item">2020-10-1</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>4-基于SpringBoot的Web开发</div>
+                                <div class="ui link list">
+                                    <p class="item">2020-10-1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--博客访问信息-->
+                <div class="ui segments">
+                    <div class="ui secondary segment">
+                        <div class="ui two column grid center">
+                            <div class="column left aligned">
+                                <i class="info icon"></i>Info
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <div class="ui segment">
+                            <div class="ui two column grid center">
+                                <div class="column left aligned">
+                                    Article :
+                                </div>
+                                <div class="column right aligned">
+                                    13
+                                </div>
+
+                                <div class="column left aligned">
+                                    UV :
+                                </div>
+                                <div class="column right aligned">
+                                    699
+                                </div>
+
+                                <div class="column left aligned">
+                                    PV :
+                                </div>
+                                <div class="column right aligned">
+                                    7299
+                                </div>
+
+                                <div class="column left aligned">
+                                    LastPush :
+                                </div>
+                                <div class="column right aligned">
+                                    1 hours ago
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚部分-->
+<footer class="ui inverted vertical segment">
+    <!--center aligned保证所有条目居中显示-->
+    <div class="ui container center aligned">
+        <!--inverted表示颜色反转，divided表示按照给定大小显示分界线，二者共同作用显示反色分界线-->
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <img src="./static/img/mycode.png" alt="" style="width: 100px">
+            </div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a class="item" href="#">【Blog】Test1</a>
+                    <a class="item" href="#">【Blog】Test2</a>
+                    <a class="item" href="#">【Blog】Test3</a>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a class="item" href="#">Tel: 187xxxx3839</a>
+                    <a class="item" href="#">Email: ywrby@test.cn</a>
+                </div>
+            </div>
+
+            <div class="five wide column">
+                <h4 class="ui inverted header">关于我</h4>
+                <p class="ui inverted m-opacity-mini m-text-thin m-text-spaced m-text-lined">
+                    I am a Student majoring in CS at SWU. If you have any questions about the computer, You can contact me by the way beside
+                </p>
+            </div>
+
+
+        </div>
+        <!--分割线-->
+        <div class="ui inverted section divider"></div>
+        <p class=" m-opacity-mini m-text-thin m-text-spaced m-text-lined">©2020 - 2021 By Ywrby</p>
+    </div>
+</footer>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
+
+<!--定义汉堡按键实现汉堡菜单-->
+<script>
+    $(".menu.toggle").click(function (){
+        $(".m-item").toggleClass("m-mobile-hide");
+    })
+</script>
+</body>
+</html>

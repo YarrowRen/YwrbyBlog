@@ -1,3 +1,8 @@
+body {
+    background: url("../img/bg.png") !important;
+}
+
+
 /*---------padding---------*/
 .m-padded-tb-large {
     padding-top: 2em !important;
@@ -8,6 +13,13 @@
 }
 
 /*----------padded---------*/
+.m-padded-large {
+    padding: 3em !important;
+}
+.m-padded-lr-big {
+    padding-right: 2em !important;
+    padding-left: 2em !important;
+}
 .m-padded-mini {
     padding: 0.5em !important;
 }
@@ -36,3 +48,24 @@
 }
 
 
+.m-right-top {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+.m-mobile-show {
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .m-mobile-hide {
+        display: none !important;
+    }
+    .m-mobile-show {
+        display: block !important;
+    }
+    .m-padded-lr-big {
+        padding-right: 0.5em !important;
+        padding-left: 0.5em !important;
+    }
+}
