@@ -1,0 +1,38 @@
+/*---------padding---------*/
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.m-padded-tb2-lr1-large {
+    padding: 2em 1em !important;
+}
+
+/*----------padded---------*/
+.m-padded-mini {
+    padding: 0.5em !important;
+}
+
+.m-padded-t1-tiny {
+    padding-top: 1em !important;
+}
+/*---------text---------*/
+.m-text-thin {
+    font-width: 300 !important;
+}
+.m-text-spaced {
+    letter-spacing: 1px !important;
+}
+.m-text-lined {
+    line-height: 1.8;
+}
+
+.m-opacity-mini {
+    opacity: 0.8 !important;
+}
+/*---------display---------*/
+/*转为行内元素，避免h3等换行*/
+.m-inline-block {
+    display: inline-block !important;
+}
+
+
