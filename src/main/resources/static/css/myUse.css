@@ -2,8 +2,7 @@ body {
     background: url("../img/bg.png") !important;
 }
 
-
-/*---------padding---------*/
+/*----------padded---------*/
 .m-padded-tb-large {
     padding-top: 2em !important;
     padding-bottom: 2em !important;
@@ -12,7 +11,6 @@ body {
     padding: 2em 1em !important;
 }
 
-/*----------padded---------*/
 .m-padded-large {
     padding: 3em !important;
 }
@@ -23,6 +21,10 @@ body {
 .m-padded-mini {
     padding: 0.5em !important;
 }
+.m-padded-tiny {
+    padding: 1em !important;
+}
+
 
 .m-padded-t1-tiny {
     padding-top: 1em !important;
@@ -53,6 +55,13 @@ body {
     top: 0 !important;
     right: 0 !important;
 }
+
+.m-right-bottom {
+    bottom: 20px !important;
+    right: 0 !important;
+}
+
+/*---------mobile----------*/
 .m-mobile-show {
     display: none !important;
 }
@@ -69,3 +78,11 @@ body {
         padding-left: 0.5em !important;
     }
 }
+
+
+/*---------position----------*/
+.m-fixed {
+    position: fixed !important;
+    z-index: 1 !important;
+}
+
