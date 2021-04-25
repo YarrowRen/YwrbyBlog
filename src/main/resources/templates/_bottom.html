@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--页脚部分-->
+<footer class="ui inverted vertical segment" th:fragment="bottom">
+    <!--center aligned保证所有条目居中显示-->
+    <div class="ui container center aligned">
+        <!--inverted表示颜色反转，divided表示按照给定大小显示分界线，二者共同作用显示反色分界线-->
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <img src="../static/img/mycode.png" th:src="@{/img/mycode.png}" alt="" style="width: 100px">
+            </div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a class="item" href="#">【Blog】Test1</a>
+                    <a class="item" href="#">【Blog】Test2</a>
+                    <a class="item" href="#">【Blog】Test3</a>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header">联系我</h4>
+                <div class="ui inverted link list">
+                    <a class="item" href="#">Tel: 187xxxx3839</a>
+                    <a class="item" href="#">Email: ywrby@test.cn</a>
+                </div>
+            </div>
+
+            <div class="five wide column">
+                <h4 class="ui inverted header">关于我</h4>
+                <p class="ui inverted m-opacity-mini m-text-thin m-text-spaced m-text-lined">
+                    I am a Student majoring in CS at SWU. If you have any questions about the computer, You can contact me by the way beside
+                </p>
+            </div>
+
+
+        </div>
+        <!--分割线-->
+        <div class="ui inverted section divider"></div>
+        <p class=" m-opacity-mini m-text-thin m-text-spaced m-text-lined">©2020 - 2021 By Ywrby</p>
+    </div>
+</footer>
+
+</body>
+</html>

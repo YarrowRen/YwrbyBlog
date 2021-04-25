@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="_fragment :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客详情页面</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!--引入semanticUI-->
-    <link rel="stylesheet" href="./static/css/typo.css"><!--引入Typo.css-->
-    <link rel="stylesheet" href="./static/lib/prism/prism.css"><!--Prism引入-->
-    <link rel="stylesheet" href="./static/lib/tocbot/tocbot.css"><!--引入Tocbot-->
-    <link rel="stylesheet" type="text/css" href="./static/css/myUse.css">
+    <link rel="stylesheet" href="../static/css/typo.css"><!--引入Typo.css-->
+    <link rel="stylesheet" href="../static/lib/prism/prism.css"><!--Prism引入-->
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css"><!--引入Tocbot-->
+    <link rel="stylesheet" type="text/css" href="../static/css/myUse.css">
 
 </head>
 <body>
 
     <!--导航部分-->
-    <nav class="ui inverted attached segment">
+    <nav th:replace="_menu :: menu" class="ui inverted attached segment">
         <div class="ui container">
             <!--导航栏-->
             <!--stackable是为了适配移动端-->
@@ -480,7 +480,7 @@ h4{font-size:1.2em;}
                     </div>
 
                     <div class="right three wide column ">
-                        <img src="./static/img/title.png" class="ui image circular fluid" style="width: 110px">
+                        <img src="../static/img/title.png" class="ui image circular fluid" style="width: 110px">
                     </div>
                 </div>
             </div>
@@ -491,7 +491,7 @@ h4{font-size:1.2em;}
                         <h3 class="ui dividing header">Comments</h3>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="./static/img/title.png">
+                                <img src="../static/img/title.png">
                             </a>
                             <div class="content">
                                 <a class="author">Matt</a>
@@ -508,7 +508,7 @@ h4{font-size:1.2em;}
                         </div>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="./static/img/title.png">
+                                <img src="../static/img/title.png">
                             </a>
                             <div class="content">
                                 <a class="author">Elliot Fu</a>
@@ -525,7 +525,7 @@ h4{font-size:1.2em;}
                             <div class="comments">
                                 <div class="comment">
                                     <a class="avatar">
-                                        <img src="./static/img/title.png">
+                                        <img src="../static/img/title.png">
                                     </a>
                                     <div class="content">
                                         <a class="author">Jenny Hess</a>
@@ -544,7 +544,7 @@ h4{font-size:1.2em;}
                         </div>
                         <div class="comment">
                             <a class="avatar">
-                                <img src="./static/img/title.png">
+                                <img src="../static/img/title.png">
                             </a>
                             <div class="content">
                                 <a class="author">Joe Henderson</a>
@@ -593,17 +593,17 @@ h4{font-size:1.2em;}
     </div>
 
     <div class="ui wechat-qr flowing popup transaction hidden " style="width: 130px">
-        <img src="./static/img/mycode.png" alt="" class="ui rounded image" style="width: 120px !important;">
+        <img th:src="@{/img/mycode.png}" src="../static/img/mycode.png" alt="" class="ui rounded image" style="width: 120px !important;">
     </div>
 
     <!--页脚部分-->
-    <footer class="ui inverted vertical segment">
+    <footer th:replace="_bottom :: bottom" class="ui inverted vertical segment">
         <!--center aligned保证所有条目居中显示-->
         <div class="ui container center aligned">
             <!--inverted表示颜色反转，divided表示按照给定大小显示分界线，二者共同作用显示反色分界线-->
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
-                    <img src="./static/img/mycode.png" alt="" style="width: 100px">
+                    <img src="../static/img/mycode.png" alt="" style="width: 100px">
                 </div>
 
                 <div class="four wide column">
@@ -637,14 +637,13 @@ h4{font-size:1.2em;}
             <p class=" m-opacity-mini m-text-thin m-text-spaced m-text-lined">©2020 - 2021 By Ywrby</p>
         </div>
     </footer>
-
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
-<script src="./static/lib/prism/prism.js"></script> <!--Prism-->
-<script src="./static/lib/tocbot/tocbot.min.js"></script> <!--Tocbot-->
-<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.3/jquery.scrollTo.min.js"></script>
-
-
+    <div th:replace="_fragment :: myScript">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
+        <script src="../static/lib/prism/prism.js"></script> <!--Prism-->
+        <script src="../static/lib/tocbot/tocbot.min.js"></script> <!--Tocbot-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.3/jquery.scrollTo.min.js"></script>
+    </div>
     <!--定义汉堡按键实现汉堡菜单-->
     <script>
         $(".menu.toggle").click(function (){

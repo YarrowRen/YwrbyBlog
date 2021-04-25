@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客详情页面</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!--引入semanticUI-->
-    <link rel="stylesheet" type="text/css" href="../static/css/myUse.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/myUse.css" th:href="@{/css/myUse.css}">
 
 </head>
 <body>
 
     <!--导航部分-->
-    <nav class="ui inverted attached segment">
+    <nav class="ui inverted attached segment" >
         <div class="ui container">
             <!--导航栏-->
             <!--stackable是为了适配移动端-->
@@ -39,19 +39,23 @@
     <div class="m-padded-tb-large">
         <div class="ui container">
             <div class="ui top attached secondary segment">
-                <h2>标签状态管理</h2>
+                <h2>博客状态管理</h2>
             </div>
             <div class="ui attached segment">
                 <table class="ui striped table center aligned">
                     <thead>
                     <tr>
-                        <th>Tag Name</th>
+                        <th>Blog Name</th>
+                        <th>Last Update Time</th>
+                        <th>Writer</th>
                         <th>Operate</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>John Lilki</td>
+                        <td>September 14, 2013</td>
+                        <td>jhlilk22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -59,6 +63,8 @@
                     </tr>
                     <tr>
                         <td>Jamie Harington</td>
+                        <td>January 11, 2014</td>
+                        <td>jamieharingonton@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -66,6 +72,8 @@
                     </tr>
                     <tr>
                         <td>Jill Lewis</td>
+                        <td>May 11, 2014</td>
+                        <td>jilsewris22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -73,6 +81,8 @@
                     </tr>
                     <tr>
                         <td>John Lilki</td>
+                        <td>September 14, 2013</td>
+                        <td>jhlilk22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -80,6 +90,8 @@
                     </tr>
                     <tr>
                         <td>John Lilki</td>
+                        <td>September 14, 2013</td>
+                        <td>jhlilk22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -87,6 +99,8 @@
                     </tr>
                     <tr>
                         <td>Jamie Harington</td>
+                        <td>January 11, 2014</td>
+                        <td>jamieharingonton@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -94,6 +108,8 @@
                     </tr>
                     <tr>
                         <td>Jill Lewis</td>
+                        <td>May 11, 2014</td>
+                        <td>jilsewris22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -101,6 +117,8 @@
                     </tr>
                     <tr>
                         <td>John Lilki</td>
+                        <td>September 14, 2013</td>
+                        <td>jhlilk22@yahoo.com</td>
                         <td>
                             <button class="ui primary button">编辑</button>
                             <button class="ui button">删除</button>
@@ -109,7 +127,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th colspan="2">
+                        <th colspan="4">
                             <div class="ui left floated pagination menu">
                                 <a class="icon item">
                                     <i class="left chevron icon"></i>
@@ -124,7 +142,7 @@
                             </div>
 
                             <div class="ui right floated small primary labeled icon button ">
-                                <i class="edit icon"></i> 添加标签
+                                <i class="edit icon"></i> 添加文章
                             </div>
                         </th>
                     </tr>
@@ -135,13 +153,13 @@
     </div>
 
     <!--页脚部分-->
-    <footer class="ui inverted vertical segment">
+    <footer  class="ui inverted vertical segment">
         <!--center aligned保证所有条目居中显示-->
         <div class="ui container center aligned">
             <!--inverted表示颜色反转，divided表示按照给定大小显示分界线，二者共同作用显示反色分界线-->
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
-                    <img src="../static/img/mycode.png" alt="" style="width: 100px">
+                    <img src="../../static/img/mycode.png" alt="" style="width: 100px">
                 </div>
 
                 <div class="four wide column">
@@ -176,8 +194,11 @@
         </div>
     </footer>
 
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
+    <div >
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
+        <script src="../../static/lib/editormd/editormd.js" th:src="@{/lib/editormd/editormd.js}"></script>
+    </div>
 
     <!--定义汉堡按键实现汉堡菜单-->
     <script>

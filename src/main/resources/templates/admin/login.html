@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!--引入semanticUI-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/myUse.css" th:href="@{/css/myUse.css}">
+    <link rel="stylesheet" type="text/css" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}" />
+</head>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<div class="ui container center aligned" style="max-width: 35em !important;">
+    <div class="ui container m-padded-large">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui red image header">
+                    <img src="../../static/img/title.png" th:src="@{/img/title.png}" class="image">
+                    <div class="content">
+                        博客后台管理系统
+                    </div>
+                </h2>
+                <form class="ui large form">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="ui fluid large red submit button">登录</div>
+                    </div>
+
+                    <div class="ui error message"></div>
+
+                </form>
+
+                <div class="ui message">
+                    新用户？ <a href="login.php#">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div >
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> <!--jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> <!--semanticUI-->
+    <script src="../../static/lib/editormd/editormd.js" th:src="@{/lib/editormd/editormd.js}"></script>
+</div>
+
+    <!--定义汉堡按键实现汉堡菜单-->
+    <script>
+        $(".menu.toggle").click(function (){
+            $(".m-item").toggleClass("m-mobile-hide");
+        })
+
+        $('.ui.dropdown')
+            .dropdown()
+        ;
+
+    </script>
+</body>
+</html>

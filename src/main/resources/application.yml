@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+# 配置日志记录级别
+logging:
+  level:
+    cn.ywrby: debug
+    org.springframework: info
+    root: info
+  file:
+    path: log/blog.log
+spring:
+  # 配置数据库连接池
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://cdb-cd3ybvc6.cd.tencentcdb.com:10056/blog
+    username: root
+    password: renboyu010214
+
+mybatis:
+  # 配置实体类别名 包路径
+  type-aliases-package: cn.ywrby.domain
+  # 配置映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  # 配置日志文件
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
