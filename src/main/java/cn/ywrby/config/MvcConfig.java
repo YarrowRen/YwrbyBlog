@@ -1,7 +1,7 @@
 package cn.ywrby.config;
 
 
-import cn.ywrby.interceptor.TestInterceptor;
+import cn.ywrby.interceptor.LoginStateInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -13,13 +13,22 @@ public class MvcConfig implements WebMvcConfigurer { //继承WebMvcConfigurer以
 
     //在SpringMVC容器中注册拦截器
     @Bean //使用在方法上，标注将该方法返回值存储到Spring容器中
-    public TestInterceptor testInterceptor(){
-        return new TestInterceptor();
+    public LoginStateInterceptor loginStateInterceptor(){
+        return new LoginStateInterceptor();
     }
 
     //将拦截器添加到SpringMVC拦截器链中，复写该方法
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(testInterceptor()).addPathPatterns("/*");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/blogs");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/blogs/*");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/blog");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/blog/*");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/tags");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/tags/*");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/index");
+        registry.addInterceptor(loginStateInterceptor()).addPathPatterns("/admin/blogs/*");
     }
+
+
 }

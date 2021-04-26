@@ -19,8 +19,8 @@
             <div class="ui inverted menu secondary stackable">
                 <h2 class="ui teal header item">YwrbyBlog管理界面</h2>
 
-                <a href="#" class="item m-mobile-hide m-item"><i class="home icon"></i> Blogs</a> <!--首页-->
-                <a href="#" class="item m-mobile-hide m-item"><i class="idea icon"></i> Tags</a> <!--时间线 归档-->
+                <a href="/admin/blogs" class="item m-mobile-hide m-item"><i class="home icon"></i> Blogs</a> <!--首页-->
+                <a href="/admin/tags" class="item m-mobile-hide m-item"><i class="idea icon"></i> Tags</a> <!--时间线 归档-->
                 <a href="#" class="item m-mobile-hide m-item"><i class="info icon"></i> About</a> <!--关于我-->
 
                 <div class="right item m-mobile-hide m-item">
@@ -106,13 +106,13 @@
     </div>
 
     <!--页脚部分-->
-    <footer  class="ui inverted vertical segment">
+    <footer  class="ui inverted vertical segment"  th:replace="_bottom :: bottom" >
         <!--center aligned保证所有条目居中显示-->
         <div class="ui container center aligned">
             <!--inverted表示颜色反转，divided表示按照给定大小显示分界线，二者共同作用显示反色分界线-->
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
-                    <img src="../../static/img/mycode.png" alt="" style="width: 100px">
+                    <img src="../../static/img/mycode.png" th:src="@{/img/mycode.png}" alt="" style="width: 100px">
                 </div>
 
                 <div class="four wide column">
