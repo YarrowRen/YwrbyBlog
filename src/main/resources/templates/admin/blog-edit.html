@@ -3,7 +3,7 @@
 <head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客编辑页面</title>
+    <title>博文编写</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"><!--引入semanticUI-->
     <link rel="stylesheet" type="text/css" href="../../static/css/myUse.css" th:href="@{/css/myUse.css}">
     <link rel="stylesheet" type="text/css" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}" />
@@ -22,13 +22,8 @@
                 <a href="/admin/blogs" class="item m-mobile-hide m-item"><i class="home icon"></i> Blogs</a> <!--首页-->
                 <a href="/admin/tags" class="item m-mobile-hide m-item"><i class="idea icon"></i> Tags</a> <!--时间线 归档-->
                 <a href="#" class="item m-mobile-hide m-item"><i class="info icon"></i> About</a> <!--关于我-->
+                <a href="/admin/login" class="item m-item right"><i class="window close icon"></i> Logout</a> <!--注销登录-->
 
-                <div class="right item m-mobile-hide m-item">
-                    <div class="ui icon input transparent inverted">
-                        <input type="text" placeholder="Search...">
-                        <i class="search icon link"></i>
-                    </div>
-                </div>
             </div>
         </div>
         <a class="menu toggle ui black button icon m-right-top m-mobile-show">
@@ -96,12 +91,8 @@
                         </div>
 
                     </form>
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
 
@@ -155,9 +146,6 @@
 
     <!--定义汉堡按键实现汉堡菜单-->
     <script>
-        $(".menu.toggle").click(function (){
-            $(".m-item").toggleClass("m-mobile-hide");
-        })
 
         $('.ui.dropdown')
             .dropdown()

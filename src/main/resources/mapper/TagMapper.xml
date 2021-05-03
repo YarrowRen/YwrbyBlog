@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--映射文件DTD约束头-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mybatis用户映射文件-->
+<mapper namespace="cn.ywrby.mapper.TagMapper">
+
+    <select id="findAll" resultType="Tag">
+        select * from tag
+    </select>
+
+    <insert id="save" parameterType="Tag" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into tag(tagName) values (#{tagName})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from tag where id = #{tagId}
+    </delete>
+
+    <select id="findTagById" resultType="Tag" parameterType="java.lang.Integer">
+        select * from tag where id= #{tagId}
+    </select>
+
+    <update id="update" parameterType="Tag">
+        update tag set tagName=#{tagName} where id=#{id}
+    </update>
+
+</mapper>
