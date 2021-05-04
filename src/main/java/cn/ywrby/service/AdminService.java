@@ -13,15 +13,4 @@ import java.util.List;
 public interface AdminService {
     User login(String username, String password);
 
-    List<Blog> findAllBlogs();
-
-    List<Tag> findAllTags();
-
-    void saveTag(String tagName);
-
-    void delTag(int tagId);
-
-    Tag findTagById(int tagId);
-
-    void tagReEdit(int tagId, String tagName);
 }

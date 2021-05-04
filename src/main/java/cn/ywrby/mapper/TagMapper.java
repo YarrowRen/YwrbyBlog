@@ -15,4 +15,6 @@ public interface TagMapper {
     Tag findTagById(int tagId);
 
     void update(Tag tag);
+
+    Tag findTagByTagName(String tagName);
 }

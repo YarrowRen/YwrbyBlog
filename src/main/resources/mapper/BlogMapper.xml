@@ -9,4 +9,20 @@
         select * from blog
     </select>
 
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from blog where id = #{blogId}
+    </delete>
+
+    <insert id="insert" parameterType="Blog" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into blog(title,content,views,releaseDate,updateDate) values (#{title},#{content},#{views},#{releaseDate},#{updateDate})
+    </insert>
+
+    <insert id="insertBlogTag">
+        insert into blog_tag(blogId,tagId) values (#{blogId},#{tagId})
+    </insert>
+
+
+    <select id="findBlogById" resultType="Blog" parameterType="java.lang.Integer">
+        select * from blog where id= #{blogId}
+    </select>
 </mapper>

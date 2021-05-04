@@ -25,3 +25,8 @@ mybatis:
   # 配置日志文件
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#分页pageHelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true

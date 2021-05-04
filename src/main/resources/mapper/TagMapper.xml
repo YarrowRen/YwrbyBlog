@@ -21,8 +21,13 @@
         select * from tag where id= #{tagId}
     </select>
 
+    <select id="findTagByTagName" resultType="Tag" parameterType="java.lang.String">
+        select * from tag where tagName= #{tagName} limit 1
+    </select>
+
     <update id="update" parameterType="Tag">
         update tag set tagName=#{tagName} where id=#{id}
     </update>
+
 
 </mapper>
