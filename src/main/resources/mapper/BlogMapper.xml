@@ -25,4 +25,12 @@
     <select id="findBlogById" resultType="Blog" parameterType="java.lang.Integer">
         select * from blog where id= #{blogId}
     </select>
+
+    <update id="update" parameterType="Blog">
+        update blog set title=#{title},content=#{content},updateDate=#{updateDate} where id=#{id}
+    </update>
+
+    <delete id="deleteBlogTag" parameterType="java.lang.Integer">
+        delete from blog_tag where blogId = #{blogId}
+    </delete>
 </mapper>

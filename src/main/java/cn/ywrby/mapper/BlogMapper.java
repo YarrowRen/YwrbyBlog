@@ -16,4 +16,8 @@ public interface BlogMapper {
     void insertBlogTag(@Param("blogId") int blogId,@Param("tagId") int tagId);
 
     Blog findBlogById(int blogId);
+
+    void update(Blog blog);
+
+    void deleteBlogTag(int blogId);
 }

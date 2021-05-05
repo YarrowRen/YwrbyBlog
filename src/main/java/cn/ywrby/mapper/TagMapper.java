@@ -17,4 +17,6 @@ public interface TagMapper {
     void update(Tag tag);
 
     Tag findTagByTagName(String tagName);
+
+    void deleteBlogTagByTagId(int tagId);
 }

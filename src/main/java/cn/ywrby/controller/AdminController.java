@@ -35,8 +35,7 @@ public class AdminController {
     private BlogService blogService;
 
     /**
-     * 用户登录界面
-     * @return
+     * 用户登录界面UI
      */
     @GetMapping
     public ModelAndView loginPage(){
@@ -71,6 +70,8 @@ public class AdminController {
 
     /**
      * 用户全部博客管理
+     * @param page 分页起始页
+     * @param pageSize 分页大小
      */
     @RequestMapping("/blogs")
     public ModelAndView blogsEdit(@RequestParam(required=true, defaultValue = "1")Integer page, @RequestParam(required=false,defaultValue="8")Integer pageSize){
@@ -87,8 +88,11 @@ public class AdminController {
         return modelAndView;
     }
 
+
     /**
      * 标签管理展示界面
+     * @param page 分页起始页
+     * @param pageSize 分页大小
      */
     @RequestMapping("/tags")
     public ModelAndView tagsList(@RequestParam(required=true, defaultValue = "1")Integer page, @RequestParam(required=false,defaultValue="8")Integer pageSize){
@@ -109,7 +113,6 @@ public class AdminController {
 
     /**
      * 新建标签界面
-     * @return
      */
     @RequestMapping("/tagSaveUI")
     public ModelAndView tagSaveUI(){
@@ -119,20 +122,18 @@ public class AdminController {
     }
 
     /**
-     * 保存标签
+     * 保存标签/新建标签
      * @param tagName 标签名称
-     * @return
      */
     @RequestMapping("/tagSave")
     public String tagSave(String tagName){
-        tagService.saveTag(tagName);
+        tagService.saveTag(tagName);  //调用tagService保存指定标签名
         return "redirect:/admin/tags";
     }
 
     /**
      * 删除指定标签
      * @param tagId 标签ID
-     * @return
      */
     @RequestMapping("/delTag/{tagId}")
     public String delTag(@PathVariable(value = "tagId",required = true) int tagId){
@@ -183,35 +184,71 @@ public class AdminController {
         return "redirect:/admin/blogs";
     }
 
+    /**
+     * 跳转到新建博客页面
+     * @return
+     */
     @RequestMapping("/blogSaveUI")
-    public ModelAndView blogEdit(){
+    public ModelAndView blogSaveUI(){
         ModelAndView modelAndView=new ModelAndView();
-        List<Tag> tagList = tagService.findAllTags();
+        List<Tag> tagList = tagService.findAllTags(); //获取全部标签信息
+        //传入标签信息
         modelAndView.addObject("tagList",tagList);
+        //跳转到指定视图
         modelAndView.setViewName("admin/blog-save");
         return modelAndView;
     }
 
+    /**
+     * 博客保存功能
+     * @param title 博客标题
+     * @param content 博客正文内容
+     * @param tagList 博客的标签列表
+     */
     @RequestMapping("/blogSave")
     public String blogSave(String title,String content,String[] tagList){
+        //保存博客基本信息
         int blogId=blogService.save(title,content);
-        for(String tagName:tagList){
-            Tag tag=tagService.findTagByTagName(tagName);
-            blogService.saveBlogTag(blogId,tag.getId());
-        }
+        //保存博客的标签信息
+        blogService.saveBlogTag(blogId,tagList);
+        //重定向到博客展示页面，以刷新数据库
         return "redirect:/admin/blogs";
     }
 
-
+    /**
+     * 重新编辑博客界面
+     * @param blogId 博客ID
+     * @return
+     */
     @RequestMapping("/editBlogUI/{blogId}")
     public ModelAndView editBlogUI(@PathVariable(value = "blogId",required = true) int blogId){
         ModelAndView modelAndView=new ModelAndView();
+        //根据博客ID获取博客基本信息
         Blog blog=blogService.findBlogById(blogId);
+        //获取全部标签列表
         List<Tag> tagList = tagService.findAllTags();
+        //传入数据
         modelAndView.addObject("tagList",tagList);
         modelAndView.addObject("blog",blog);
+        //跳转到编辑博客视图
         modelAndView.setViewName("admin/blog-edit");
         return modelAndView;
+    }
+
+    /**
+     * 重新编辑博客后保存
+     * @param blogId 博客ID
+     * @param title 博客标题
+     * @param content 博客正文内容
+     * @param tagList 博客的标签列表
+     */
+    @RequestMapping("/blogReEdit")
+    public String blogReEdit(int blogId,String title,String content,String[] tagList){
+        //保存重新编辑后的博客基本信息
+        blogService.blogReEdit(blogId,title,content);
+        //保存重编辑后的博客标签信息
+        blogService.saveBlogTag(blogId,tagList);
+        return "redirect:/admin/blogs";
     }
 
 }

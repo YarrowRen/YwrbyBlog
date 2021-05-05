@@ -20,7 +20,7 @@ public class TagServiceImpl implements TagService {
     public List<Tag> findAllTags(Integer page,Integer pageSize) {
         //获取分页插件对象
         PageHelper.startPage(page,pageSize);
-
+        //查询全部标签信息
         List<Tag> tagList=tagMapper.findAll();
         return tagList;
     }
@@ -45,6 +45,9 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public void delTag(int tagId) {
+        //删除与之配对的博客标签信息
+        tagMapper.deleteBlogTagByTagId(tagId);
+        //删除该标签信息
         tagMapper.delete(tagId);
     }
 

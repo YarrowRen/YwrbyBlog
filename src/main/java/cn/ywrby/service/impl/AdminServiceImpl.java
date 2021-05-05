@@ -26,6 +26,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public User login(String username, String password) {
+        //利用用户名和密码查找是否存在指定用户并返回
         User user = userMapper.findUserByUsernameAndPassword(username, password);
         return user;
     }

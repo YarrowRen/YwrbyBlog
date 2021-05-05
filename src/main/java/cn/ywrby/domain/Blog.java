@@ -12,14 +12,12 @@ import java.util.Date;
 @Data
 @Slf4j
 public class Blog {
-    private int id;  //文章ID，唯一标识符
-    private String title;  //文章标题
-    private String content;  //文章文本内容
-    private int views;  //浏览次数
-
+    private int id;           //文章ID，唯一标识符
+    private String title;     //文章标题
+    private String content;   //文章文本内容
+    private int views;        //浏览次数
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date releaseDate;  //发布时间
-
+    private Date releaseDate; //发布时间
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date updateDate;   //更新时间
+    private Date updateDate;  //更新时间
 }

@@ -3,6 +3,8 @@
 Simple blog system based on SpringBoot and SemanticUI
 
 
+
+
 ## 项目进度
 
 日期|版本|项目情况
@@ -13,3 +15,4 @@ Simple blog system based on SpringBoot and SemanticUI
 2021/4/25|fourth commit|整合后端框架
 2021/5/4|fifth commit|后台管理功能实现，完善用户登录功能以及标签管理界面
 2021/5/4|sixth commit|后台管理功能实现，完善博客管理功能（编辑，删除，新增，分页）以及标签管理
+2021/5/5|seventh commit|后台管理功能完善

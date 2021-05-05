@@ -29,5 +29,8 @@
         update tag set tagName=#{tagName} where id=#{id}
     </update>
 
+    <delete id="deleteBlogTagByTagId" parameterType="java.lang.Integer">
+        delete from blog_tag where tagId = #{tagId}
+    </delete>
 
 </mapper>
